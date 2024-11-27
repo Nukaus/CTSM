@@ -12,13 +12,13 @@ def calculate():
     data_inicio = request.form['data_inicio']
     data_final = request.form['data_final']
    
-    separado_inicial = data_inicio.split("/")
+    separado_inicial = data_inicio.split("")
     ano_inicial = int(separado_inicial [0])
     mes_inicial = int(separado_inicial [1])
     dia_inicial = int(separado_inicial [2])
 
 
-    separado_final = data_final.split("/")
+    separado_final = data_final.split("")
     ano_final = int(separado_final [0])
     mes_final = int(separado_final [1])
     dia_final = int(separado_final [2])
