@@ -23,8 +23,8 @@ def calculate():
     mes_final = int(separado_final [1])
     dia_final = int(separado_final [2])
 
-    data_inicio = datetime(ano_inicial, mes_inicial, dia_inicial)
-    data_final = datetime(ano_final, mes_final, dia_final)
+    data_inicio = datetime(dia_inicial, mes_inicial, ano_inicial)
+    data_final = datetime(dia_final, mes_final, ano_final)
 
     diferenca = data_final - data_inicio 
     dias_totais = diferenca.days
