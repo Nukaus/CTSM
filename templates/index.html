@@ -8,12 +8,12 @@
 </head>
 <body>
     <header>
-        <h2>Calculadora de Tempo de Serviço Militar</h2>
+        <h1>CALCULADORA DE TEMPO DE SERVIÇO MILITAR</h1>
     </header>
     <main>
         <section id="form">
             <form action="/calculate" method="post">
-                <label for="data_inicio">Data de Início:</label>
+                <label for="data_inicio">Data Início:</label>
                 <input type="date" name="data_inicio" required>
         
                 <label for="data_final">Data Final:</label>
@@ -25,11 +25,7 @@
         <section id="resultado">
             {% if anos is not none %}
                 <h3>Resultado:</h3>
-                <p>O tempo de serviço militar é de<br> 
-                    {{ anos }}: anos<br> 
-                    {{ meses }}: meses<br>  
-                    {{ dias_restantes }}: dias.</p>
-                <p>Total de dias: {{ dias_totais }}</p>
+                <p>O seu tempo de serviço militar é de: {{ anos }} anos {{ meses }} meses {{ dias_restantes }} dias. <STRONG>TOTAL DE DIAS:</STRONG> {{ dias_totais }}</p>
             {% endif %}
         </section>
     </main>
