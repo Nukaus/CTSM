@@ -2,24 +2,39 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Calculadora de Tempo de Serviço Militar</h2>
-    <form action="/calculate" method="post">
-        <label for="data_inicio">Data de Início (DD/MM/YYYY):</label>
-        <input type="date" name="data_inicio" placeholder="Ex: 01012020" required>
+    <header>
+        <h2>Calculadora de Tempo de Serviço Militar</h2>
+    </header>
+    <main>
+        <section id="form">
+            <form action="/calculate" method="post">
+                <label for="data_inicio">Data de Início:</label>
+                <input type="date" name="data_inicio" required>
         
-        <label for="data_final">Data Final (DD/MM/YYYY):</label>
-        <input type="date" name="data_final" placeholder="Ex: 01012020" required>
+                <label for="data_final">Data Final:</label>
+                <input type="date" name="data_final" required>
         
-        <button type="submit">Calcular</button>
-    </form>
-
-    {% if anos is not none %}
-        <h3>Resultado:</h3>
-        <p>O tempo de serviço militar é de {{ anos }} anos, {{ meses }} meses e {{ dias_restantes }} dias.</p>
-        <p>Total de dias: {{ dias_totais }}</p>
-    {% endif %}
+                <button type="submit">Calcular</button>
+            </form>
+        </section>
+        <section id="resultado">
+            {% if anos is not none %}
+                <h3>Resultado:</h3>
+                <p>O tempo de serviço militar é de<br> 
+                    {{ anos }}: anos<br> 
+                    {{ meses }}: meses<br>  
+                    {{ dias_restantes }}: dias.</p>
+                <p>Total de dias: {{ dias_totais }}</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>Página desenvolvida por Cristiano Santos</p>
+    </footer>
 </body>
 </html>
