@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
@@ -15,7 +15,8 @@ def calculate():
     data_inicio = datetime.strptime(data_inicio, '%Y-%m-%d')
     data_final = datetime.strptime(data_final, '%Y-%m-%d')
 
-    diferenca = data_final - data_inicio 
+    sdiferenca = data_final - data_inicio
+    diferenca = sdiferenca + timedelta(days=1)
     dias_totais = diferenca.days
     
     anos = dias_totais // 365
